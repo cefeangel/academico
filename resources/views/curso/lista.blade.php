@@ -18,6 +18,7 @@ Lista Cursos
             <th>Id</th>
             <th>Curso</th>
             <th>Descrição</th>
+            <th>Ação</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +27,7 @@ Lista Cursos
             <td>{{ $curso->id }}</td>
             <td>{{ $curso->curso }}</td>
             <td>{{ $curso->descrisao }}</td>
+            <td><a href="/curso/detalhe/{{$curso->id}}" >Visualizar</a></td>
         </tr>
         @endforeach
 

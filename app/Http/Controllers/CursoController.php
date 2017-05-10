@@ -23,6 +23,19 @@ class CursoController extends Controller
         
     }
     
+    public function detalhe(){
+        
+        $id = Request::route('id');
+        
+        $curso = DB::table('cursos')
+                ->select('id','curso','descrisao')
+                ->where('id','=',$id)
+                ->get();
+                   
+        return print_r($curso[0]);
+        
+    }
+    
     
     public function adiciona(){
         
