@@ -27,7 +27,10 @@ Lista Cursos
             <td>{{ $curso->id }}</td>
             <td>{{ $curso->curso }}</td>
             <td>{{ $curso->descrisao }}</td>
-            <td><a href="/curso/detalhe/{{$curso->id}}" >Visualizar</a></td>
+            <td>
+                <a href="/curso/detalhe/{{$curso->id}}" >Visualizar</a>&nbsp;|&nbsp;
+                <a href="/curso/remove/{{$curso->id}}" >Remover</a>
+            </td>
         </tr>
         @endforeach
 

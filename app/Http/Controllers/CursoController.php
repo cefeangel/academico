@@ -32,7 +32,8 @@ class CursoController extends Controller
                 ->where('id','=',$id)
                 ->get();
                    
-        return print_r($curso[0]);
+        return view('curso.detalhe')
+                ->with('curso', $curso[0]);
         
     }
     
@@ -53,6 +54,14 @@ class CursoController extends Controller
         return redirect()
             ->action('CursoController@lista')
             ->withInput(Request::only('curso'));
+        
+    }
+    
+    public function remove(){
+        
+        $id = Request::route('id');
+        
+        
         
     }
 }

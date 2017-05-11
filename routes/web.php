@@ -19,5 +19,6 @@ Route::get('/curso/novo','CursoController@novo');
 Route::post('/curso/adiciona','CursoController@adiciona');
 Route::get('/curso/detalhe/{id}','CursoController@detalhe')
         ->where('id','[0-9]+');
-
+Route::get('curso/remove/{id}','CursoController@remove')
+        ->where('id','[0-9]+');
 Route::get('/cursos','CursoController@lista');
