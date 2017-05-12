@@ -61,7 +61,13 @@ class CursoController extends Controller
         
         $id = Request::route('id');
         
+        DB::table('cursos')
+                ->where('id','=',$id)
+                ->delete();
         
+        return redirect()
+               ->action('CursoController@lista')
+               ->withInput(Request::all());
         
     }
 }

@@ -42,5 +42,10 @@ Lista Cursos
     <strong>Curso {{ old('curso')}} cadastrado com sucesso. </strong>
 </div>
 @endif
+@if(old('id'))
+<div class="alert alert-success alert-dismissable">
+    <strong>Curso com id {{ old('id')}} removido com sucesso. </strong>
+</div>
+@endif
 
 @stop
