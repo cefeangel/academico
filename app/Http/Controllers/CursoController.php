@@ -57,6 +57,39 @@ class CursoController extends Controller
         
     }
     
+    public function editar($id){
+       
+       $curso = DB::table('cursos')
+               ->select('id','curso','descrisao')
+               ->where('id','=',$id)
+               ->get();
+       
+       $curso[0]->action = '/curso/atualizar';  
+       
+       return view('curso.novo')
+              ->with('curso', $curso[0]);
+    }
+    
+    public function atualizar(){
+        
+        $id = Request::input('idCurso');
+        $curso = Request::input('curso');
+        $descricao = Request::input('descrisao');
+        
+        DB::table('cursos')
+                ->where('id',$id)
+                ->update(
+                        [
+                            'curso'=>$curso,
+                            'descrisao'=>$descricao
+                        ]);
+        
+        return redirect()
+               ->action('CursoController@lista');
+                
+       
+    }
+    
     public function remove(){
         
         $id = Request::route('id');

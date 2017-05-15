@@ -28,8 +28,9 @@ Lista Cursos
             <td>{{ $curso->curso }}</td>
             <td>{{ $curso->descrisao }}</td>
             <td>
-                <a href="/curso/detalhe/{{$curso->id}}" >Visualizar</a>&nbsp;|&nbsp;
-                <a href="/curso/remove/{{$curso->id}}" >Remover</a>
+                <a href="{{ action('CursoController@detalhe',$curso->id)}}" >Visualizar</a>&nbsp;|&nbsp;
+                <a href="{{ action('CursoController@editar',$curso->id)}}" >Editar</a>&nbsp;|&nbsp;
+                <a href="{{ action('CursoController@remove',$curso->id)}}" >Remover</a>
             </td>
         </tr>
         @endforeach
