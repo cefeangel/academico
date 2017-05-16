@@ -26,3 +26,5 @@ Route::get('/cursos','CursoController@lista');
 Route::get('curso/editar/{id}','CursoController@editar')
         ->where('id','[0-9]+');
 Route::post('/curso/atualizar','CursoController@atualizar');
+
+Route::get('/aluno/novo','AlunoControler@novo');

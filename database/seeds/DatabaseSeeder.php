@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call('CursoTableSeeder');
+        $this->call('CursoTableSeeder');
+        $this->call('AlunoTableSeed');
     }
 }
 
@@ -32,4 +33,33 @@ class CursoTableSeeder extends Seeder {
                 ]
                 );
     }
+}
+
+class AlunoTableSeed extends Seeder {
+    
+    public function run(){
+        
+        DB::table('alunos')->insert(
+                [
+                    'nome'=>'Eunice',
+                    'dataNasc'=>'1987-02-02'
+                ]
+        );
+        
+        DB::table('alunos')->insert(
+            [
+                'nome'=>'Jose',
+                'dataNasc'=>'1982-10-02'
+            ]
+        );
+        
+        DB::table('alunos')->insert(
+            [
+                'nome'=>'Carlos',
+                'dataNasc'=>'1998-07-11'
+            ]
+        );
+    }
+    
+    
 }
